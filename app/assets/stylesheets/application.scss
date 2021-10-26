@@ -14,3 +14,20 @@
  *= require_self
  */
 @import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.btn-sm, .btn-group-sm>.btn {
+    padding: 0.25rem
+             0.5rem
+;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem
+;
+}

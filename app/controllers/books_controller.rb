@@ -14,12 +14,14 @@ class BooksController < ApplicationController
   end
 
   def show
+    @book = Book.new
   end
 
   def destroy
   end
 
   def edit
+    
   end
 
   private

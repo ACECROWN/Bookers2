@@ -20,7 +20,7 @@
                 <% if user_signed_in? %>
 
                   <li>
-                    Home
+                    <%= link_to 'Home', user_path(current_user.id), class: "fas fa-home nav-link text-light" %>
                   </li>
 
 
@@ -29,11 +29,11 @@
                   </li>
 
                   <li>
-                    Books
+                    <%= link_to 'Books', books_path, class: "fas fa-book-open nav-link text-light" %>
                   </li>
 
                   <li>
-                    <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+                    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt nav-link text-light" %>
                   </li>
                 <% else %>
                   <li>

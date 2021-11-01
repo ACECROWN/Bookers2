@@ -1,4 +1,6 @@
-<%= render 'users/list', book: @book %>
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+<%= render 'users/list', book: @book,  user: @user %>
 
  <div class='col-md-8 offset-md-1'>
   		<h2>Book detail</h2>
@@ -10,10 +12,9 @@
 </a>          </td>
           <td><a href="/books/"></a></td>
           <td></td>
-            <td><a class="btn btn-sm btn-success edit_book" href="/books/edit">Edit</a></td>
+            <td><%= link_to 'Edit', edit_book_path(@book), class: " btn btn-sm btn-success" %></td>
             <td><a data-confirm="本当に消しますか？" class="btn btn-sm btn-danger destroy_book" rel="nofollow" data-method="delete" href="/books">Destroy</a></td>
         </tr>
       </table>
-    </div>
   </div>
 </div>

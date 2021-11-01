@@ -1,12 +1,11 @@
- <div class='container px-5 px-sm-0'>
-  <div class='row'>
-    <div class='col-md-3'>
+ <div class='row'></div>
+ <div class='col-md-3'>
  <h2>User info</h2>
       <table class='table'>
-  <tr><img class="attachment user profile_image fallback" src="/assets/no_image-72379a4da21cb04a58337cf92d85bc39f8d534cbc78254c2085acaca82236bfa.jpg" /></tr>
+  <tr><%=  class: "attachment user profile_image fallback", src: "/assets/no_image-72379a4da21cb04a58337cf92d85bc39f8d534cbc78254c2085acaca82236bfa.jpg" %></tr>
   <tr>
 	  <th>name</th>
-	  <%= @user.name %>
+	  <%= user.name %>
 	  <th>aaaaaa</th>
   </tr>
   <tr>
@@ -16,7 +15,7 @@
 </table>
 
 <div class='row'>
-  <%= link_to '', edit_user_path(@user) ,class: "btn btn-outline-secondary btn-block fas fa-user-cog " %>
+  <%= link_to 'User', edit_user_path(user), class: "btn btn-outline-secondary btn-block fas fa-user-cog " %>
 </div>
 
  <h1>New book</h1>
@@ -34,6 +33,9 @@
   <%= f.text_field :title %>
   <h4>Opinion</h4>
   <%= f.text_area :body %>
-  <%= f.submit 'Create Book' %>
+  <%= f.submit 'Create Book', class: " btn btn-sm btn-success" %>
 <% end %>
+
+
+</div>
 

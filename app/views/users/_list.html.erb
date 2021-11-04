@@ -1,16 +1,23 @@
+
  <div class='row'></div>
  <div class='col-md-3'>
+ <% if book.errors.any? %>
+  <%= book.errors.count %>errors prohibited this obj from being saved:
+  <% book.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
  <h2>User info</h2>
       <table class='table'>
-  <tr><%=  class: "attachment user profile_image fallback", src: "/assets/no_image-72379a4da21cb04a58337cf92d85bc39f8d534cbc78254c2085acaca82236bfa.jpg" %></tr>
+  <tr><%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></p></tr>
   <tr>
 	  <th>name</th>
-	  <%= user.name %>
-	  <th>aaaaaa</th>
-  </tr>
+	  <th><%= user.name %></th>
+
+	 </tr>
   <tr>
 	  <th>introduction</th>
-	  <th></th>
+	  <th><%= user.introduction %></th>
   </tr>
 </table>
 
@@ -19,12 +26,7 @@
 </div>
 
  <h1>New book</h1>
- <% if book.errors.any? %>
-  <%= book.errors.count %>件のエラーが発生しました
-  <% book.errors.full_messages.each do |message| %>
-    <%= message %>
-  <% end %>
-<% end %>
+
 
 <!-- form_with部分 -->
 <%= form_with model: book, url:'/books', local:true do |f| %>
